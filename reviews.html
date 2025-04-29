@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviews - My Food Blog</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">My Food Blog</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="gadgets.html">Gadgets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="reviews-header">
+        <h1>Food Writing and Restaurant Reviews</h1>
+        <p>Explore essays and articles from food lovers and critics!</p>
+      </section>
+
+      <!-- Static Reviews Section -->
+      <section class="reviews-list">
+        <h2>Food Reviews & Articles</h2>
+        <div class="review-posts">
+          <article class="review-card">
+            <h3>Exploring the Best Pizza in New York City</h3>
+            <p class="author">By Dishelin</p>
+            <p class="excerpt">New York City is home to some of the best pizza joints in the world. From classic thin-crust to deep-dish, let's dive into the history and the must-visit spots for pizza lovers...</p>
+            <a href="https://dishelinguide.com/go-to-spots/the-best-pizza-in-nyc/" class="read-more" target="_blank" rel="noopener noreferrer">Read More</a>
+          </article>
+
+          <article class="review-card">
+            <h3>Anatomy of a Modern "It" Bar</h3>
+            <p class="author">By Rachel Del Valle</p>
+            <p class="excerpt">"What do today’s hottest bars have in common? One of these five things, most likely."</p>
+            <a href="https://punchdrink.com/articles/anatomy-of-a-modern-it-bar/" class="read-more" target="_blank" rel="noopener noreferrer">Read More</a>
+          </article>
+
+          <article class="review-card">
+            <h3>From the Mouth of the Gods</h3>
+            <p class="author">By Matt Rodbard</p>
+            <p class="excerpt">"Ethiopian coffee is one of the world’s great culinary treasures. It’s also extremely undervalued. Geoff Watts, cofounder of Intelligentsia Coffee, is on a mission to get you—and the $100 billion industry—to pay more. Much more."</p>
+            <a href="https://tastecooking.com/from-the-mouth-of-the-gods/" class="read-more" target="_blank" rel="noopener noreferrer">Read More</a>
+          </article>
+
+          <article class="review-card">
+            <h3>How Do I Make a Really Good Frozen Dessert Without an Ice Cream Machine?</h3>
+            <p class="author">By Matt Rodbard & Daniel Holzman</p>
+            <p class="excerpt">"I scream, you scream, we all scream for…parfreddo? Your dinner-party guests will love you."</p>
+            <a href="https://tastecooking.com/make-really-good-frozen-dessert-without-ice-cream-machine/" class="read-more" target="_blank" rel="noopener noreferrer">Read More</a>
+          </article>
+
+          <article class="review-card">
+            <h3>Kisa - NYC Korean Restaurant Serving Up Some Simple, Yet Delicious Eats</h3>
+            <p class="author">By Morgan Carter</p>
+            <p class="excerpt">"Kisa, short for “kisa sikdang,” is modeled after roadside diners that kept drivers fed and full across Korea in the 1980s."</p>
+            <a href="https://www.timeout.com/newyork/restaurants/kisa" class="read-more" target="_blank" rel="noopener noreferrer">Read More</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- Review Submission Form -->
+      <section class="submit-review">
+        <h2>Submit Your Review or Essay</h2>
+        <form id="review-form">
+          <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required class="form-input" />
+          </div>
+
+          <div class="form-group">
+            <label for="review-type">Review Type:</label>
+            <select id="review-type" name="review-type" required class="form-select">
+              <option value="place">Restaurant/Place</option>
+              <option value="recipe">Recipe</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="review-content">Your Review:</label>
+            <textarea id="review-content" name="review-content" rows="6" required class="form-textarea"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Review</button>
+        </form>
+      </section>
+
+      <!-- User-Submitted Reviews -->
+      <section class="user-submitted-reviews">
+        <h2>User-Submitted Reviews</h2>
+        <div id="forum-posts"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Food Blog. All rights reserved.</p>
+  </footer>
+
+  <!-- Inline JavaScript for Submission Handling -->
+  <script>
+    const form = document.getElementById('review-form');
+    const postsDiv = document.getElementById('forum-posts');
+
+    function renderPosts() {
+      postsDiv.innerHTML = "";
+      const posts = JSON.parse(localStorage.getItem("forumPosts") || "[]");
+      posts.reverse().forEach((post, index) => {
+        const div = document.createElement("div");
+        div.style.position = "relative";
+        div.style.border = "1px solid #ddd";
+        div.style.borderRadius = "12px";
+        div.style.padding = "20px";
+        div.style.marginBottom = "20px";
+        div.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.05)";
+        div.style.backgroundColor = "#fff";
+
+        div.innerHTML = `
+          <button onclick="deletePost(${posts.length - 1 - index})"
+            style="position: absolute; top: 10px; right: 10px; background:
+            #e74c3c; color: white; border: none; border-radius: 50%; width: 30px;
+            height: 30px; font-weight: bold; cursor: pointer;">
+            &times;
+          </button>
+          <strong>${post.name}</strong> (<em>${post.type}</em>)<br>
+          <p>${post.content}</p>
+        `;
+        postsDiv.appendChild(div);
+      });
+    }
+
+    function deletePost(index) {
+      const posts = JSON.parse(localStorage.getItem("forumPosts") || "[]");
+      posts.splice(index, 1);
+      localStorage.setItem("forumPosts", JSON.stringify(posts));
+      renderPosts();
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const type = document.getElementById('review-type').value;
+      const content = document.getElementById('review-content').value;
+
+      const newPost = { name, type, content };
+      const posts = JSON.parse(localStorage.getItem("forumPosts") || "[]");
+      posts.push(newPost);
+      localStorage.setItem("forumPosts", JSON.stringify(posts));
+      form.reset();
+      renderPosts();
+    });
+
+    renderPosts();
+  </script>
+</body>
+</html>

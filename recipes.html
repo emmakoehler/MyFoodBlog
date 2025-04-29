@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipes - My Food Blog</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">My Food Blog</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="gadgets.html">Gadgets</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="recipe-filter">
+      <h2>Filter Recipes</h2>
+      <select id="category-filter">
+        <option value="all">All Recipes</option>
+		<option value="breakfast">Breakfast</option>
+		<option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="dessert">Desserts</option>
+	    <option value="snacks">Snacks</option>
+
+
+        <!-- Add more categories as needed -->
+      </select>
+    </section>
+
+    <section class="recipe-list">
+      <h2>All Recipes</h2>
+      <div class="recipe-grid">
+        <!-- Recipe 1 -->
+        <article class="recipe-card">
+          <img src="images/Creamy-Garlic-Pasta.jpg" alt="Creamy Garlic Pasta" />
+          <h3>Creamy Garlic Pasta</h3>
+          <p><strong>Category:</strong> Dinner</p>
+          <p>This creamy garlic pasta is rich, comforting, and comes together in 20 minutes. Perfect for a weeknight meal.</p>
+		  <a href="https://www.allrecipes.com/recipe/269500/creamy-garlic-pasta/" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+
+        <!-- Recipe 2 -->
+        <article class="recipe-card">
+          <img src="images/Buttermilk-Biscuits.webp" alt="Fluffy Biscuits" />
+          <h3>Fluffy Buttermilk Biscuits</h3>
+          <p><strong>Category:</strong> Breakfast</p>
+          <p>These buttery biscuits are fluffy on the inside with a crisp, golden crust. A perfect addition to any meal.</p>
+		  <a href="https://thecozycook.com/buttermilk-biscuit-recipe/" target="_blank" rel="noopener noreferrer" class="btn">View Recipe</a>
+        </article>
+		
+		<article class="recipe-card">
+          <img src="images/Brownie-Cookies-Brookies.jpg" alt="The BEST Fudgy Chewy Brookies" />
+          <h3>The BEST Fudgy Chewy Brookies</h3>
+          <p><strong>Category:</strong> Desserts</p>
+          <p>These easy brookies or brownie cookies (whatever you call them) are so soft, chewy, and fudgy. They're easy to make, with only a few ingredients and less than one hour.</p>
+		  <a href="https://savvybites.co.uk/fudgy-chewy-browkies-brookies/" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+		
+		<article class="recipe-card">
+          <img src="images/strawberry-crunch-salad.jpg" alt="Strawberry Crunch Salad with Champagne Vinaigrette" />
+          <h3>Strawberry Crunch Salad with Champagne Vinaigrette</h3>
+          <p><strong>Category:</strong> Lunch</p>
+          <p>Say hello to the most delicious summery strawberry salad!</p>
+		  <a href="https://www.howsweeteats.com/2021/05/strawberry-salad/" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+		
+		<article class="recipe-card">
+          <img src="images/cucumber-salad.webp" alt="Easy Asian Cucumber Salad" />
+          <h3>Easy Asian Cucumber Salad</h3>
+          <p><strong>Category:</strong> Snacks</p>
+          <p>Enjoy thinly sliced cucumbers tossed in a deliciously spicy, tangy and savory dressing for this easy Asian cucumber salad. A great choice for an appetizer or as a side dish!</p>
+		  <a href="https://farahjeats.com/recipe/easy-asian-cucumber-salad/" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+		
+		<article class="recipe-card">
+          <img src="images/chia-pudding.webp" alt="6 Easy Chia Seed Pudding Recipes" />
+          <h3>6 Easy Chia Seed Pudding Recipes</h3>
+          <p><strong>Category:</strong> Breakfast</p>
+          <p>Learn how to make chia seed pudding in 6 amazing flavors!</p>
+		  <a href="https://www.simplyquinoa.com/chia-seed-pudding-recipes/?epik=dj0yJnU9b1ozNVhya1JxQjZycTRWNVBpYmlKdXpfcXdoUGtqaHomcD0wJm49VEZSdHE0WTF6NnQxb0JIclFBTkdKZyZ0PUFBQUFBR2dQdGRB" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+		
+		<article class="recipe-card">
+          <img src="images/Birria-Tacos.jpg" alt="Homemade Birria Tacos" />
+          <h3>Homemade Birria Tacos</h3>
+          <p><strong>Category:</strong> Dinner</p>
+          <p>Dive into flavor town with My Fave Birria Tacos! These mouthwatering gems are bursting with juicy, tender meat, wrapped in warm corn tortillas, and ready to steal the show at any taco party.</p>
+		  <a href="https://www.orchidsandsweettea.com/my-fave-birria-tacos/" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+		
+		<article class="recipe-card">
+          <img src="images/summer-berry-cheesecake.jpg" alt="Summer Berry and Peach Cheesecake Recipe" />
+          <h3>Summer Berry and Peach Cheesecake Recipe</h3>
+          <p><strong>Category:</strong> Desserts</p>
+          <p>This Summer Berry and Peach Cheesecake combines the rich, creamy texture of traditional cheesecake with the vibrant flavors of fresh berries and juicy peaches. Perfect for picnics, barbecues, or any summer gathering, this cheesecake is sure to impress.</p>
+		  <a href="https://recipesen.com/summer-berry-and-peach-cheesecake-recipe/" target="_blank" rel="noopener noreferrer">View Recipe</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Food Blog. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
